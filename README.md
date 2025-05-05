@@ -1,2 +1,2 @@
-# Email-Phishing-Detector
+# Phishing-Email-Detector
 Data Analytics Final Project
