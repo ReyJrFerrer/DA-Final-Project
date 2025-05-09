@@ -235,7 +235,7 @@ for metric in metrics:
     plt.legend()
     plt.tight_layout()
     plt.savefig(f'results/model_comparison_{metric}.png', dpi=300, bbox_inches='tight')
-    plt.close()  # Use close instead of show to avoid displaying plots during automated runs
+    plt.close()  
 
 # Also create a single comprehensive plot showing F1 scores across all evaluation methods
 plt.figure(figsize=(15, 8))
