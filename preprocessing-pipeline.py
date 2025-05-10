@@ -83,7 +83,7 @@ X_train_resampled_df = pd.DataFrame(X_train_resampled, columns=X.columns)
 X_train_resampled_df['is_phishing'] = y_train_resampled
 
 # Plot distributions of top features after SMOTE
-top_features = ['num_words', 'num_unique_words', 'num_stopwords', 'num_links', 'num_spelling_errors']  # Using actual feature names from dataset
+top_features = ['num_words', 'num_unique_words', 'num_stopwords', 'num_links', 'num_spelling_errors', 'num_urgent_keywords',]  # Using actual feature names from dataset
 
 for feature in top_features:
     plt.figure(figsize=(10, 6))
