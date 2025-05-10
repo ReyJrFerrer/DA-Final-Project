@@ -12,7 +12,7 @@ import os
 # Create directories for results
 os.makedirs('models', exist_ok=True)
 os.makedirs('results', exist_ok=True)
-os.makedirs('results/naive_bayes', exist_ok=True)
+os.makedirs('results/decision-tree', exist_ok=True)
 
 # Define model name
 MODEL_NAME = 'Decision Tree'
@@ -54,7 +54,7 @@ def evaluate_model(model, X, y, model_name, dataset_name):
     plt.xlabel('Predicted')
     plt.ylabel('Actual')
     plt.title(f'Confusion Matrix - {model_name} ({dataset_name})')
-    plt.savefig(f'results/naive_bayes/{model_name}_{dataset_name}_confusion_matrix.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'results/decision-tree/{model_name}_{dataset_name}_confusion_matrix.png', dpi=300, bbox_inches='tight')
     plt.close()
     
     # Create and save ROC curve
@@ -66,7 +66,7 @@ def evaluate_model(model, X, y, model_name, dataset_name):
     plt.ylabel('True Positive Rate')
     plt.title(f'ROC Curve - {model_name} ({dataset_name})')
     plt.legend()
-    plt.savefig(f'results/naive_bayes/{model_name}_{dataset_name}_roc_curve.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'results/decision-tree/{model_name}_{dataset_name}_roc_curve.png', dpi=300, bbox_inches='tight')
     plt.close()
     
     return {
@@ -203,7 +203,7 @@ print(f"Test: Accuracy={test_metrics['accuracy']:.4f}, Precision={test_metrics['
 
 # Create results DataFrame and save to CSV
 results_df = pd.DataFrame(results)
-results_df.to_csv(f'results/naive_bayes/naive_bayes_results.csv', index=False)
-print(f"\nResults saved to results/naive_bayes/naive_bayes_results.csv")
+results_df.to_csv(f'results/decision-tree/decision-tree_results.csv', index=False)
+print(f"\nResults saved to results/decision-tree/decision-tree_results.csv")
 
 print("\nTraining and evaluation complete!")
